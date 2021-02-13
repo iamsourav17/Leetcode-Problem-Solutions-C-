@@ -4,8 +4,6 @@
 using namespace std;
 class Solution {
 public:
-
-
 vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
         int high = *max_element(candies.begin(),candies.end());
         vector<bool> Ans;
@@ -25,14 +23,3 @@ vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
 }
 
 };
-
-int main()
-{
-    Solution s;
-    vector<int> candies{2,3,5,1,3};
-    int extra = 3;
-
-    s.kidsWithCandies(candies,extra);
-    return 0;
-
-}
