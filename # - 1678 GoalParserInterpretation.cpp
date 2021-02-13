@@ -27,12 +27,3 @@ public:
 
     }
 };
-
-int main()
-{
-    Solution s;
-
-    string C = "G()(al)";
-    s.interpret(C);
-    return 0;
-}
