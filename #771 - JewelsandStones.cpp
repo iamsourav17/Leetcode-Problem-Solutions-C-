@@ -1,7 +1,6 @@
 #include<iostream>
 #include<algorithm>
 #include<string>
-
 using namespace std;
 class Solution {
 public:
@@ -20,13 +19,3 @@ public:
         return count;
     }
 };
-
-int main()
-{
-    Solution s;
-    string J ={'a','A'};
-    string S={'a','A','A','b','b','b','b'};
-
-    s.numJewelsInStones(J,S);
-    return 0;
-}
