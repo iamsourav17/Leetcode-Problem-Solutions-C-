@@ -12,19 +12,26 @@ struct TreeNode {
   };
 class Solution {
 public:
-    TreeNode* searchBST(TreeNode* root, int val) {
-
-        if(root == NULL) return NULL;
-        if(root->val == val) return root;
-
-        if(val < root->val)
+    int rangeSumBST(TreeNode* root, int low, int high) {
+        int sum = 0;
+        if(root == NULL) return 0;
+        if(root->val >= low && root->val <= high)
         {
-            return searchBST(root->left , val);
+            sum+= root->val;
         }
-        else if(val > root->val){
-            return searchBST(root->right,val);
+        if(root->val > high)
+        {
+            sum += rangeSumBST(root->left,low,high);
         }
-
-        return NULL;
+        else if(root->val < low)
+        {
+            sum+= rangeSumBST(root->right,low,high);
+        }
+        else{
+            sum+= rangeSumBST(root->left,low,high) + rangeSumBST(root->right,low,high);
+        }
+        
+        
+        return sum;
     }
 };
